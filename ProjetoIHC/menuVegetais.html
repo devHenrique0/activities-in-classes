@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendas de Comidas</title>
+    <link rel="icon" type="image/png" href="imagens/logo - Copia.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background-color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+        .search-bar input {
+            border: none;
+            padding: 5px;
+            width: 200px;
+            outline: none;
+            background: transparent;
+        }
+
+        .search-bar button {
+            background: none;
+            border: none;
+            color: #333;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .search-bar button i {
+        font-size: 16px;
+        }
+
+        .search-bar input::placeholder {
+            color: #aaa;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .product-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .product-card {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 10px;
+            text-align: center;
+            width: 200px;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .product-card h3 {
+            margin: 10px 0;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .product-card p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .buy-button {
+            background-color: #f00;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .buy-button:hover {
+            background-color: #d00;
+        }
+
+        footer {
+            background-color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .popup-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            width: 300px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .popup-content p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .popup-content button {
+            background-color: #f00;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .popup-content button:hover {
+            background-color: #d00;
+        }
+
+        .back-button {
+            display: flex;
+            align-items: center;
+            background-color: #dc3545; /* Cor do botão */
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .back-button:hover {
+            background-color: #c82333; /* Cor ao passar o mouse */
+        }
+
+        .back-button i {
+            margin-right: 5px;
+        }
+
+        #cancel-button {
+            background-color: black; /* Vermelho */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-left: 10px;
+        }
+
+        #cancel-button:hover {
+            background-color: black; /* Vermelho escuro */
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="imagens/logo1.png" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="menuFrutas.html">Frutas</a></li>
+                <li><a href="#">Vegetais</a></li>
+                <li><a href="menuBebidas.html">Bebidas</a></li>
+                <li><a href="carrinho.html">Carrinho</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Procurar comida...">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+        <button class="back-button" onclick="window.location.href='index.html'">
+            <i class="fas fa-arrow-left"></i> Voltar
+        </button>
+    </header>
+
+    <main>
+        <section class="product-grid">
+            <div class="product-card">
+                <img src="imagens/produtos/cenoura.jpg" alt="Cenoura">
+                <h3>Cenoura</h3>
+                <p>R$ 4,99/kg</p>
+                <button class="buy-button" onclick="adicionarAoCarrinho('Cenoura', 4.99)">Adicionar ao carrinho</button>
+            </div>
+
+            <div class="product-card">
+                <img src="imagens/produtos/Espinafre.jpeg" alt="Espinafre">
+                <h3>Espinafre</h3>
+                <p>R$ 6,49/kg</p>
+                <button class="buy-button" onclick="adicionarAoCarrinho('Espinafre', 6.49)">Adicionar ao carrinho</button>
+            </div>
+
+            <div class="product-card">
+                <img src="imagens/produtos/abobrinha.jpeg" alt="Abobrinha">
+                <h3>Abobrinha</h3>
+                <p>R$ 3,99/kg</p>
+                <button class="buy-button" onclick="adicionarAoCarrinho('Abobrinha', 3.99)">Adicionar ao carrinho</button>
+            </div>
+
+            <div class="product-card">
+                <img src="imagens/produtos/brocolis.jpg" alt="Brócolis">
+                <h3>Brócolis</h3>
+                <p>R$ 8,99/kg</p>
+                <button class="buy-button" onclick="adicionarAoCarrinho('Brocolis', 8.99)">Adicionar ao carrinho</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Easy Eats</p>
+    </footer>
+
+    <div id="popup" class="popup" style="display:none;">
+    <div class="popup-content">
+        <p id="popup-message"></p>
+        <button id="confirm-button" onclick="fecharPopup()">OK</button>
+        <button id="cancel-button" onclick="removerDoCarrinho()">Cancelar</button>
+    </div>
+</div>
+
+
+    <script>
+        let ultimoItemAdicionado = null; // Para rastrear o último item adicionado
+
+        function abrirPopup(mensagem, item) {
+            document.getElementById('popup-message').textContent = mensagem;
+            document.getElementById('popup').style.display = 'flex';
+            ultimoItemAdicionado = item; // Armazena o último item adicionado
+        }
+
+        function fecharPopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+
+        function adicionarAoCarrinho(nome, preco) {
+            let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+            let itemExistente = carrinho.find(item => item.nome === nome);
+            if (itemExistente) {
+                itemExistente.quantidade += 1;
+            } else {
+                const novoItem = { nome: nome, preco: preco, quantidade: 1 };
+                carrinho.push(novoItem);
+                ultimoItemAdicionado = novoItem; // Atualiza o último item adicionado
+            }
+            localStorage.setItem('carrinho', JSON.stringify(carrinho));
+            abrirPopup(nome + ' foi adicionado ao carrinho!', { nome, preco });
+        }
+
+        function removerDoCarrinho() {
+            if (ultimoItemAdicionado) {
+                let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+                carrinho = carrinho.filter(item => item.nome !== ultimoItemAdicionado.nome);
+                localStorage.setItem('carrinho', JSON.stringify(carrinho));
+                fecharPopup();
+                abrirPopup(ultimoItemAdicionado.nome + ' foi removido do carrinho.');
+            }
+        }
+
+    </script>
+</body>
+</html>

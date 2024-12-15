@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy Eats</title>
+    <link rel="icon" type="image/png" href="imagens/logo - Copia.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW5u2v0d89wQmVWS0r914q76NP2yp+S9pDinw+AKhhd81u73s5xuzimbVn/gRbj5tQ17d1k0yec55w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        
+
+        body {
+            background-image: url("imagens/teste2.png"); /* Substitua "imagens/Easy.png" pelo caminho correto da sua imagem */
+            background-size: cover; /* A imagem cobre toda a área da tela */
+            background-position: center; /* Centraliza a imagem */
+            background-repeat: no-repeat; /* Impede a repetição da imagem */
+            background-attachment: fixed; /* A imagem de fundo fica fixa enquanto o conteúdo rola */
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: white; /* Cor do texto */
+        }
+
+
+        header {
+            background-color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 70px; /* Ajuste a altura da logo */
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav li {
+            margin-right: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover{
+            color: #f00
+        }
+
+        .cta {
+            display: flex;
+            text-decoration: none;
+        }
+
+        .cta button {
+            background-color: #f00;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+            font-weight: bold;
+        }
+
+        .cta button:first-child {
+            background-color: #ccc;
+        }
+
+        .cta a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .cta button a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px; /* Espaçamento entre o texto e o ícone */
+        }
+
+        .cta button i {
+            font-size: 16px; /* Tamanho do ícone */
+        }
+
+        main {
+            padding: 40px;
+        }
+
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: white;
+
+            }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            color:white;
+        }
+
+        .search-bar {
+            width: 500px;
+            padding: 10px;
+            border: 3px solid white;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            position: relative; /* Para posicionar o ícone */
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 10px 40px 10px 10px; /* Espaçamento para a lupa */
+            border: none;
+            outline: none;
+            font-size: 1em;
+            background: transparent; /* Fundo transparente para harmonizar */
+            color: #fff; /* Cor do texto */
+        }
+
+        .search-bar i {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 10px; /* Ajusta o espaçamento da lupa à direita */
+            font-size: 18px; /* Ajusta o tamanho do ícone */
+            color: #fff; /* Cor da lupa */
+        }
+        .cta-button {
+            background-color: #666;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em; /* Ajuste o tamanho da fonte */
+            transition: background-color 0.3s; /* Adicione transição para o hover */
+            text-decoration: none;
+        }
+
+        .cta-button a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .cta-button:hover {
+            background-color: black; /* Mudança de cor no hover */
+        }
+
+        .categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .category {
+            background-color: #fff;
+            padding: 15px 20px; /* Ajuste o espaçamento interno */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 10px;
+            cursor: pointer;
+            text-align: center; /* Centraliza o texto */
+            width: 150px; /* Define a largura das categorias */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adicione sombra para destaque */
+            transition: background-color 0.3s, box-shadow 0.3s; /* Adicione transições para o hover */
+        }
+
+        .category:hover {
+            background-color: #f00;
+            color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Aumente a sombra no hover */
+        }
+
+        footer {
+            background-color: #fff;
+            padding: 20px;
+            text-align: center;
+            margin-top: 100px;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Adicione sombra para separação */
+        }
+
+        footer a {
+            color: #666;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        footer .social-links {
+            margin-top: 10px;
+        }
+
+        footer .social-links a {
+            display: inline-block;
+            margin: 0 5px;
+            font-size: 24px;
+            color: #666;
+            transition: color 0.3s; /* Adicione transição para o hover */
+        }
+
+        footer .social-links a:hover {
+            color: #333;
+        }
+
+        .mudep{
+          color:#666
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="imagens/logo1.png" alt="Logo Easy Eats">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Entregador</a></li>
+                <li><a href="#">Restaurante e Mercado</a></li>
+                <li><a href="#">Carreiras</a></li>
+                <li><a href="#">Easy Eats card</a></li>
+            </ul>
+        </nav>
+        <div class="cta">
+            <button>
+                <a href="Cadastrar.html">
+                    Cadastrar
+                    <i class="fas fa-user-plus"></i> <!-- Ícone de cadastro -->
+                </a>
+            </button>
+            <button>
+                <a href="loginComo.html">
+                    Login
+                    <i class="fas fa-sign-in-alt"></i> <!-- Ícone de login -->
+                </a>
+            </button>
+        </div>
+    </header>
+
+    <div class="text-container">
+    <div class="text-box">
+    <main>
+        <section class="hero">
+            <h1>Faça seu pedido na Easy Eats</h1>
+            <p>Entregamos tudo o que precisa na porta da sua casa</p>
+            <div class="search-bar">
+                <input type="text" placeholder="Em qual endereço você está?">
+                <i class="fas fa-search"></i> <!-- Ícone da lupa -->
+            </div>            
+            <button class="cta-button">
+                <a href="mercadosPróximos.html">Ver Mercados Próximos</a> 
+            </button>
+        </section>
+    </div>
+    </div>
+
+    </main>
+
+    <footer>
+        <p class="mudep">&copy; 2024 Easy Eats</p>
+        <p class="mudep"><a href="#">Termos e condições de uso</a> | <a href="#">Código de conduta</a> | <a href="#">Privacidade</a> | <a href="#">Dicas de segurança</a></p>
+      </footer>
+
+</body>
+</html>

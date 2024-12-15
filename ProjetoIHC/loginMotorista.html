@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="icon" type="image/png" href="imagens/logo - Copia.png">
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            border-radius: 4px;
+        }
+
+        button {
+            text-decoration: none;
+            background-color: #dc143c; /* Red color */
+            color: white;
+            padding: 12px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            opacity: 0.9;
+            text-decoration: none;
+        }
+
+        .checkbox {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .traco{
+            text-decoration: none;
+            color: white;
+        }
+
+        .forgot {
+            color: #dc143c; /* Red color */
+            text-decoration: none; 
+        }
+
+        .logo {
+             margin-bottom: 2px;
+        }
+
+        .logo img {
+            width: 200px;
+        }
+
+        .termo{
+            text-decoration: none;
+            color: gray;
+        }
+
+        button.login-button {
+            background-color: #dc143c; /* Vermelho */
+            color: white;
+        }
+
+        button.back-button {
+            background-color: #333; /* Preto */
+            color: white;
+        }
+
+        button.back-button:hover {
+            background-color: #555; /* Cinza escuro no hover */
+        }
+
+
+    </style>
+</head>
+<body>
+      <div class="logo">
+        <img src="imagens/logo.png" alt="Sua Logo">
+      </div>
+    <div class="container">
+        <h1>LOGIN</h1>
+        <form>
+            <input type="text" placeholder="Username" required>
+            <input type="password" placeholder="Password" required>
+            <a href="esqueciSenhaMotorista.html" class="forgot">Esqueci minha senha</a>
+            <button type="submit" class="login-button" onclick="window.location.href='motoristasPedidos.html';">LOGIN</button>
+            <button type="button" class="back-button" onclick="window.location.href='loginComo.html';">VOLTAR</button>
+        </form>
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Restaurante</title>
+    <link rel="icon" type="image/png" href="imagens/logo - Copia.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            margin: 90px;
+            padding: 0px;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 320px;
+        }
+
+        h1 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        input[type="text"], input[type="password"], input[type="number"] {
+            width: 100%;
+            padding: 12px 15px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 1em;
+        }
+
+        button{
+            background-color: #dc143c; /* Cor vermelha */
+            color: white;
+            padding: 12px;
+            margin-top: 15px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+
+        button{
+            background-color: #dc143c; /* Cor vermelha */
+            color: white;
+            padding: 12px;
+            margin-top: 15px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+
+
+        button:hover {
+            background-color: #b71c1c; /* Cor mais escura no hover */
+        }
+
+        .checkbox {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .checkbox label {
+            margin-left: 5px;
+            font-size: 0.9em;
+            color: #333;
+        }
+
+        .checkbox input {
+            margin-right: 10px;
+        }
+
+        .forgot, .termo {
+            color: #dc143c;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+
+        .logo {
+            margin-bottom: -10px;
+        }
+
+        .logo img {
+            width: 200px;   
+        }
+
+        .button:last-child {
+            background-color: #333; /* Botão de voltar em cinza */
+        }
+
+        .button:last-child:hover {
+            background-color: #555; /* Efeito hover no botão de voltar */
+        }
+
+        .button a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img src="imagens/logo.png" alt="Sua Logo">
+    </div>
+    <div class="container">
+        <h1>Cadastro de Cliente</h1>
+        <form>
+            <input type="text" placeholder="Rua" required>
+            <input type="text" placeholder="Bairro" required>
+            <input type="number" placeholder="Número" required>
+            <input type="number" placeholder="CPF" required>
+            <input type="text" placeholder="Nome de usuário" required>
+            <input type="text" placeholder="E-mail" required>
+            <input type="password" placeholder="Senha" required>
+
+            <div class="checkbox">
+                <input type="checkbox" id="termo" required>
+                <label for="termo"><a href="termoCliente.html" class="termo">Aceito os termos e condições</a></label>
+            </div>
+            
+            <button class="button">Cadastrar</button>
+
+            <button class="button">
+                <a href="Cadastrar.html">Voltar</a>
+            </button>
+        </form>
+    </div>
+</body>
+</html>

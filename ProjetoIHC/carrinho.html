@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="icon" type="image/png" href="imagens/logo - Copia.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background-color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+        }
+
+        h2 {
+            text-align: center;
+            margin: 20px 0;
+            color: #333;
+            font-size: 2em;
+        }
+
+        .cart-container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cart-item p {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .item-price {
+            font-weight: bold;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .cart-total {
+            font-size: 1.5em;
+            margin-top: 20px;
+            text-align: right;
+        }
+
+        .finalize-button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+            transition: background-color 0.3s;
+        }
+
+        .cancele-button {
+            background-color:#d00;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+            transition: background-color 0.3s;
+        }
+
+        .finalize-button:hover {
+            background-color: #218838;
+        }
+
+        .cancele-button:hover{
+            background-color: #d00;
+        }
+
+        footer {
+            background-color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+            margin-top: 40px;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Pop-up */
+        .popup {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .popup-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            width: 300px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .popup-content p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .popup-content button {
+            background-color: #f00;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .popup-content button:hover {
+            background-color: #d00;
+        }
+
+        .finalize-button i,
+        .cancele-button i {
+            margin-left: 10px;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+        .search-bar input {
+            border: none;
+            padding: 5px;
+            width: 200px;
+            outline: none;
+            background: transparent;
+        }
+
+        .search-bar button {
+            background: none;
+            border: none;
+            color: #333;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .search-bar button i {
+        font-size: 16px;
+        }
+
+        .search-bar input::placeholder {
+            color: #aaa;
+        }
+
+        .back-button {
+            display: flex;
+            align-items: center;
+            background-color: #dc3545; /* Cor do botão */
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .back-button:hover {
+            background-color: #c82333; /* Cor ao passar o mouse */
+        }
+
+        .back-button i {
+            margin-right: 5px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="imagens/logo1.png" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="menuFrutas.html">Frutas</a></li>
+                <li><a href="menuVegetais.html">Vegetais</a></li>
+                <li><a href="menuBebidas.html">Bebidas</a></li>
+                <li><a href="carrinho.html">Carrinho</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Procurar comida...">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+        <button class="back-button" onclick="window.location.href='index.html'">
+            <i class="fas fa-arrow-left"></i> Voltar
+        </button>
+    </header>
+
+    <main>
+        <h2>Carrinho de Compras</h2>
+        <div class="cart-container">
+            <div id="cart-items"></div>
+            <div class="cart-total">
+                Total: R$ <span id="total-price">0.00</span>
+            </div>
+            <button class="finalize-button" onclick="finalizarCompra()">
+                Comprar
+                <i class="fas fa-shopping-cart"></i>
+            </button>
+            <button class="cancele-button" onclick="cancelarCompra()">
+                Cancelar
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Easy Eats</p>
+    </footer>
+
+    <!-- Pop-up -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <p id="popup-message"></p>
+            <button onclick="fecharPopup()">OK</button>
+        </div>
+    </div>
+
+    <script>
+        function abrirPopup(mensagem) {
+            document.getElementById('popup-message').textContent = mensagem;
+            document.getElementById('popup').style.display = 'flex';
+        }
+
+        function fecharPopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+
+        function carregarCarrinho() {
+            let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+            let cartItems = document.getElementById('cart-items');
+            let totalPrice = 0;
+            cartItems.innerHTML = '';
+
+            if (carrinho.length === 0) {
+                cartItems.innerHTML = '<p>Seu carrinho está vazio!</p>';
+                document.getElementById('total-price').textContent = '0.00';
+                return;
+            }
+
+            carrinho.forEach(function(item) {
+                totalPrice += item.preco * item.quantidade;
+                let div = document.createElement('div');
+                div.classList.add('cart-item');
+                div.innerHTML = `<p>${item.nome} - R$ ${item.preco.toFixed(2)} (x${item.quantidade})</p>`;
+                cartItems.appendChild(div);
+            });
+
+            document.getElementById('total-price').textContent = totalPrice.toFixed(2);
+        }
+
+        function finalizarCompra() {
+            if (localStorage.getItem('carrinho')) {
+                abrirPopup('Compra finalizada com sucesso!');
+                localStorage.removeItem('carrinho');
+                carregarCarrinho();
+            } else {
+                abrirPopup('Seu carrinho está vazio!');
+            }
+        }
+
+        function cancelarCompra() {
+            if (localStorage.getItem('carrinho')) {
+                abrirPopup('Compra cancelada com sucesso!');
+                localStorage.removeItem('carrinho');
+                carregarCarrinho();
+            } else {
+                abrirPopup('Seu carrinho está vazio!');
+            }
+        }
+
+        window.onload = carregarCarrinho;
+    </script>
+
+</body>
+</html>

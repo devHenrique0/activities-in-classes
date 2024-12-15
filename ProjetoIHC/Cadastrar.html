@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolha de Cadastro</title>
+    <link rel="icon" type="image/png" href="imagens/logo - Copia.png">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+            flex-direction: column;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            text-align: center;
+
+        }
+
+        h1 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .button {
+            background-color: #d50000; /* Cor vermelha */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 15px;
+            font-size: 1em;
+            width: 100%;
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #b71c1c; /* Efeito de hover mais escuro */
+        }
+
+        .button a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .button:last-child {
+            background-color: #333; /* Botão de voltar em cinza */
+        }
+
+        .button:last-child:hover {
+            background-color: #555; /* Efeito hover no botão de voltar */
+        }
+
+        .logo {
+             margin-bottom: 2px;
+        }
+
+        .logo img {
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img src="imagens/logo.png" alt="Sua Logo">
+    </div>    
+
+    <div class="container">
+        <h1>CADASTRE-SE</h1>    
+
+        <button class="button">
+            <a href="Cadastrorestaurante.html">Restaurante</a>
+        </button></a>
+        
+        <button class="button">
+            <a href="Cadastromotorista.html">Motorista</a>
+        </button>
+
+        <button class="button">
+            <a href="Cadastrocliente.html">Cliente</a>
+        </button>
+
+        <button class="button">
+            <a href="index.html">Voltar</a>
+        </button>
+    </div>
+
+</body>
+</html>

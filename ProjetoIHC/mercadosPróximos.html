@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercados Próximos - Easy Eats</title>
+    <link rel="icon" type="image/png" href="imagens/logo - Copia.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+
+        header {
+            background-color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        header .logo img {
+            height: 50px;
+        }
+
+        header .title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #f44336;
+        }
+
+        main {
+            padding: 40px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #f44336;
+            margin-bottom: 20px;
+            text-decoration: none;
+        }
+
+        .market-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .market-card {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .market-details {
+            max-width: 70%;
+        }
+
+        .market-details h2 {
+            font-size: 1.5rem;
+            margin: 0;
+            color: #333;
+        }
+
+        .market-details p {
+            margin: 5px 0;
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .cta-button {
+            background-color: #f44336;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #d32f2f;
+        }
+
+        footer {
+            background-color: #fff;
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        footer a {
+            color: #666;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .back-button {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #d32f2f;
+        }
+
+        .back-button i {
+            font-size: 1.2rem;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="imagens/logo1.png" alt="Logo Easy Eats">
+        </div>
+        <div class="title">Mercados Próximos</div>
+        <button class="back-button" onclick="window.location.href='index.html';">
+            <i class="fas fa-arrow-left"></i> Voltar
+        </button>
+    </header>
+    
+
+    <main>
+        <h1>Mercados Próximos</h1>
+        
+        <div class="market-list">
+            <!-- Card de Mercado -->
+            <div class="market-card">
+                <div class="market-details">
+                    <h2>Mercado Central</h2>
+                    <p>Endereço: Rua Central, 123 - Centro</p>
+                    <p>Horário: 08:00 às 20:00</p>
+                </div>
+                <button class="cta-button">Ver Detalhes</button>
+            </div>
+
+            <div class="market-card">
+                <div class="market-details">
+                    <h2>Supermercado Econômico</h2>
+                    <p>Endereço: Av. das Flores, 456 - Jardim</p>
+                    <p>Horário: 07:00 às 22:00</p>
+                </div>
+                <button class="cta-button">Ver Detalhes</button>
+            </div>
+
+            <div class="market-card">
+                <div class="market-details">
+                    <h2>Mercado do Bairro</h2>
+                    <p>Endereço: Rua das Palmeiras, 789 - Bairro Novo</p>
+                    <p>Horário: 06:00 às 21:00</p>
+                </div>
+                <button class="cta-button">Ver Detalhes</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Easy Eats</p>
+        <p><a href="#">Termos e condições de uso</a> | <a href="#">Código de conduta</a> | <a href="#">Privacidade</a> | <a href="#">Dicas de segurança</a></p>
+    </footer>
+</body>
+</html>
