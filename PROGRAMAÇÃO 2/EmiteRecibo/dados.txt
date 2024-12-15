@@ -1,0 +1,6 @@
+111 lapis 10 1,30
+112 borracha 5 2,60
+130 caderno 5 13,00
+114 caneta 8 7,80
+113 apontador 6 5,20
+115 regua 12 3,90
